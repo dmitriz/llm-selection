@@ -1,52 +1,45 @@
-# LLM Selection Project PROJECT BACKLOG — llm-selection
+# LLM Selection Project
 
-This project aims to support strategic model selection for LLM tasks. It will track model capabilities, reasoning depth, rate limits, file support, access type (API/local), and usage strategies.
+A system for selecting, routing, and evaluating large language models (LLMs) based on task type, reasoning ability, access methods, costs, and reliability.
 
----
+## 🚀 Getting Started
 
-## ✅ Core Goals
+This project is designed to help you make strategic model selection decisions for your LLM tasks. The repository will grow to include:
 
-- Catalog available models (GPT-4o, Claude, Gemini, Perplexity, local models)
-- Track API access methods, rate limits, pricing, latency, reliability
-- Differentiate models by reasoning strength vs generation speed
-- Record model-specific prompt adaptation patterns
-- Design a lightweight routing logic for task-type-to-model mapping
-- Enable reviewer prompts to assess model output reliability
-- Plan for multi-model evaluation loops (e.g., Grok + Claude + GPT-4o)
-- Begin evaluation logging for performance and failures
+- Model catalogs with capability tracking
+- Routing logic for task-to-model mapping
+- Evaluation tools and reviewer prompts
+- Integration patterns for various LLM access methods
 
----
+## 📂 Repository Structure
 
-## 🧠 Key Ideas to Track
+- `models.md` - Catalog of available LLMs and their capabilities (planned)
+- `routing-strategy.md` - Logic for matching tasks to models (planned)
+- `reviewer-prompts.md` - Evaluation criteria and prompts (planned)
+- `PROJECT_BACKLOG.md` - Complete project backlog with detailed goals and plans
 
-- Reasoning models vs generative models: how to choose
-- Structured vs unstructured prompt input
-- Task classification: research, summarization, synthesis, validation
-- Local quantized model usage and constraints (e.g., llama.cpp, Ollama)
-- Router design: file-based input → task → model(s) → reviewer loop
-- Use of assistant-agent separation (router, reviewer, executor)
-- Explore how to collect model performance data over time
-- Evaluate when to use search vs static LLM
-- Decision trees, scorecards, or rule-sets for model choice
-
----
-
-## 🧪 Suggested Experiments
-
-- Run identical prompts across GPT-4o, Claude Opus, Gemini Pro
-- Use reviewer prompt to evaluate each output
-- Compare search-enabled vs search-disabled runs
-- Benchmark against latency, reasoning quality, hallucination frequency
-
----
-
-## 📥 Tasks (Initial)
+## 🏁 Initial Tasks
 
 - [ ] Create `models.md` for cataloging available LLMs
 - [ ] Add `routing-strategy.md` to outline logic by task type
 - [ ] Prepare reviewer prompt set in `reviewer-prompts.md`
-- [ ] Design and test a selection prompt (e.g., “Which model should I use for X?”)
+- [ ] Design and test a selection prompt (e.g., "Which model should I use for X?")
+
+## 📖 Detailed Documentation
+
+For complete project details including:
+
+- Core components
+- Key insights and strategy notes
+- Planned experiments
+- Roles and agents
+
+Please refer to the [PROJECT_BACKLOG.md](PROJECT_BACKLOG.md) file.
+
+## 🤝 Contributing
+
+Contributions are welcome! Check the PROJECT_BACKLOG.md for areas where you can help, or suggest new features and improvements.
 
 ---
 
-> You can move any of these items into GitHub Issues or Projects if needed. This backlog will grow as other repos are integrated.
+> Note: This project is in active development. Features and documentation will evolve over time.
