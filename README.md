@@ -1,4 +1,4 @@
-# PROJECT BACKLOG — llm-selection
+# LLM Selection Project PROJECT BACKLOG — llm-selection
 
 This project aims to support strategic model selection for LLM tasks. It will track model capabilities, reasoning depth, rate limits, file support, access type (API/local), and usage strategies.
 
