@@ -25,6 +25,42 @@ This project is designed to help you make strategic model selection decisions fo
 - [ ] Prepare reviewer prompt set in `reviewer-prompts.md`
 - [ ] Design and test a selection prompt (e.g., "Which model should I use for X?")
 
+## 📊 Roadmap & Prioritization
+
+### Phase 1: Model Cataloging (June 2025)
+
+- **Focus**: Comprehensive model inventory and capability assessment
+- **Deliverable**: `models.md` with detailed capability matrix
+- **Key milestones**: 
+  - Complete API documentation for all major providers
+  - Document token limits and rate restrictions
+  - Create standardized capability scoring system
+
+### Phase 2: Routing Strategy (July 2025)
+
+- **Focus**: Decision framework for model selection
+- **Deliverable**: `routing-strategy.md` with decision trees
+- **Key milestones**:
+  - Map task types to optimal model profiles
+  - Create fallback pathways for rate limits and failures
+  - Design cost optimization strategies
+
+### Phase 3: Evaluation Framework (August 2025)
+
+- **Focus**: Output quality assessment
+- **Deliverable**: `reviewer-prompts.md` with scoring metrics
+- **Key milestones**:
+  - Develop standardized evaluation criteria
+  - Create reviewer prompts for different output types
+  - Build comparison methodology for cross-model evaluation
+
+### Success Metrics
+
+- **Latency targets**: <500ms for routing decisions, <5s end-to-end for simple tasks
+- **Hallucination thresholds**: <2% factual errors in final outputs
+- **Cost efficiency**: 30% reduction in token usage vs. single-model approach
+- **Selection accuracy**: >95% appropriate model selection for given task types
+
 ## 📖 Detailed Documentation
 
 For complete project details including:

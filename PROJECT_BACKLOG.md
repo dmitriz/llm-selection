@@ -3,6 +3,23 @@
 This file serves as the **complete strategic record** for the `llm-selection` project.  
 It contains all relevant ideas, insights, plans, and instructions discussed — **nothing omitted**.
 
+## 📋 Table of Contents
+
+- [Project Purpose](#-project-purpose)
+- [Key Goals](#-key-goals)
+- [Core Components](#-core-components)
+  - [Model Capability Tracker](#1-model-capability-tracker)
+  - [Routing Logic](#2-routing-logic)
+  - [Reviewer Agent](#3-reviewer-agent)
+  - [Prompt Adaptation Patterns](#4-prompt-adaptation-patterns)
+  - [Evaluation Workflows](#5-evaluation-workflows)
+  - [Task Classifier](#6-task-classifier-future)
+- [Roles & Agents](#-roles--agents)
+- [Key Insights & Strategy Notes](#-key-insights--strategy-notes)
+- [Experiments](#-experiments)
+- [Tasks (Open)](#-tasks-open)
+- [Notes](#-notes)
+
 ---
 
 ## ✅ Project Purpose
@@ -13,15 +30,25 @@ Design and maintain a system for **selecting, routing, and evaluating large lang
 
 ## 🔹 Key Goals
 
+### Catalog & Capabilities
+
 - Create a structured **catalog of available LLMs** (hosted + local)
 - Track model capabilities: reasoning, generation, summarization, speed, latency
 - Track access methods: OpenAI, Claude, Gemini, Grok, local APIs, etc.
-- Document prompt adaptation needs for different models
+
+### Routing & Logic
+
 - Develop a model selection and routing logic (manual + automated)
 - Enable task-based model decision-making using clear rules
+- Document prompt adaptation needs for different models
+
+### Evaluation & Feedback
+
 - Design **reviewer prompts** to evaluate model output reliability and completeness
 - Implement multi-model feedback loops: compare answers, escalate, route to reviewer
 - Prepare for eventual automation and integration into assistant/agent systems
+
+---
 
 ---
 
@@ -29,11 +56,15 @@ Design and maintain a system for **selecting, routing, and evaluating large lang
 
 ### 1. Model Capability Tracker
 
+*See detailed design in [models.md](models.md)*
+
 - Name, provider, access type (API/local), rate limits, cost structure
 - Token/window limits, search capability, file input support
 - Update history, reliability patterns, reasoning depth classification
 
 ### 2. Routing Logic
+
+*See detailed design in [routing-strategy.md](routing-strategy.md)*
 
 - Task-to-model mapping table or logic flow
 - Conditional decision-making (e.g., if search needed, use X; if local, use Y)
@@ -41,11 +72,15 @@ Design and maintain a system for **selecting, routing, and evaluating large lang
 
 ### 3. Reviewer Agent
 
+*See detailed design in [reviewer-prompts.md](reviewer-prompts.md)*
+
 - Prompt templates for reviewing output quality, coherence, hallucination risk
 - Scoring guidelines and structured review format
 - Cross-model comparison prompts
 
 ### 4. Prompt Adaptation Patterns
+
+*See detailed implementation in [prompt-patterns.md](prompt-patterns.md) (planned)*
 
 - Variants needed for models that require different formatting (e.g., Claude XML tags)
 - Self-evaluation trigger prompts ("explain how you understood this before answering")
@@ -53,14 +88,20 @@ Design and maintain a system for **selecting, routing, and evaluating large lang
 
 ### 5. Evaluation Workflows
 
+*See detailed workflows in [evaluation-flows.md](evaluation-flows.md) (planned)*
+
 - Run same prompt across multiple models
 - Capture outputs + reviewer evaluation
 - Score responses on reasoning, hallucination risk, formatting, insight quality
 
 ### 6. Task Classifier (Future)
 
+*See design plans in [task-classifier.md](task-classifier.md) (planned)*
+
 - Classify user requests into task types: research, summarization, validation, generation
 - Use classification to trigger routing decisions
+
+---
 
 ---
 
@@ -79,9 +120,9 @@ Design and maintain a system for **selecting, routing, and evaluating large lang
 - **Model selection is not static**: capabilities evolve rapidly, so selection logic must be easily editable
 - Reasoning models (GPT-4o, Claude Opus) often required for synthesis, logic, ambiguity
 - Generation-first models (e.g. Gemini Pro) may be better for formatting, templating, speed
-- **Reviewers are essential**: many LLMs produce superficially plausible but flawed answers
+- Reviewers are essential: many LLMs produce superficially plausible, but flawed answers
 - Model hallucination is often subtle; detecting it must be part of the process
-- **Two-way flow with agents like Copilot** is critical (copilot executes, LLMs generate)
+- **Two-way flow with agents like Copilot** is critical (e.g., Copilot asks LLM → LLM generates solution → Copilot verifies and executes)
 - **File- and folder-based context** is more scalable than prompt text alone
 - Local quantized models (e.g., via Ollama, llama.cpp) are viable but must be benchmarked
 - Cost/rate limits can be offset by chaining: cheap model for draft, powerful model for polish
